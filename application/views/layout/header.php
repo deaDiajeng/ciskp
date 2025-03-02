@@ -12,10 +12,10 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-        <!-- Bootstrap Library -->
+        <!-- CSS Library -->
         <link rel="stylesheet" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" href="public/css/sb-admin-2.min.css">
         <!-- Custom Style -->
         <link rel="stylesheet" href="public/css/styles.css?v= . filemtime(FCPATH . public/css/styles.css));">
-        <!-- <link href="public/css/sb-admin-2.min.css" rel="stylesheet"> -->
 
     </head>
