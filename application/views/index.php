@@ -12,20 +12,20 @@ include 'layout/navbar.php';
     </div>
 </section>
 
-<!-- Guru -->
-<section class="page-section bg-light" id="acara">
+<!-- Guru = Agenda --> 
+<section class="page-section bg-light" id="agenda">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Acara</h2>
             <!-- <h3 class="section-subheading text-muted">Guru yang sudah bersertifikasi</h3> -->
         </div>
         <div class="row">
-            <?php foreach ($guru as $teacher): ?>
+            <?php foreach ($agenda as $event): ?>
             <div class="col-lg-4 col-sm-6 mb-4">
                 <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="assets/img/guru/<?php echo htmlspecialchars($teacher['foto']); ?>" alt="<?php echo htmlspecialchars($teacher['nama']); ?>" />
-                    <h4><?php echo htmlspecialchars($teacher['nama']); ?></h4>
-                    <p class="text-muted"><?php echo htmlspecialchars($teacher['jabatan']); ?></p>
+                    <img class="mx-auto rounded-circle" src="public/img/agenda/<?php echo htmlspecialchars($event['gambar']); ?>" alt="<?php echo htmlspecialchars($event['judul']); ?>" />
+                    <h4><?php echo htmlspecialchars($event['judul']); ?></h4>
+                    <p class="text-muted"><?php echo htmlspecialchars($event['tgl']); ?></p>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -38,7 +38,7 @@ include 'layout/navbar.php';
     </div>
 </section>
 
-<!-- Hafalan-->
+<!-- Capaian Hafalan-->
 <section class="page-section" id="hafalan">
     <div class="container">
         <div class="text-center">
@@ -46,16 +46,16 @@ include 'layout/navbar.php';
             <h3 class="section-subheading text-muted">Capaian Hafalan para santri sehari-hari</h3>
         </div>
         <ul class="timeline">
-            <?php foreach ($pelajaran as $index => $lesson): ?>
+            <?php foreach ($hafalan as $index => $lesson): ?>
             <li class="<?php echo $index % 2 === 1 ? 'timeline-inverted' : ''; ?>">
-            <div class="timeline-image" style="background-image: url('assets/img/alur/<?php echo htmlspecialchars($lesson['gambar']); ?>');"></div>
+            <div class="timeline-image" style="background-image: url('public/img/capaian/<?php echo htmlspecialchars($lesson['foto']); ?>');"></div>
                 <div class="timeline-panel">
                     <div class="timeline-heading">
-                        <h4><?php echo htmlspecialchars($lesson['judul']); ?></h4>
-                        <!-- <h4 class="subheading"><?php echo htmlspecialchars($lesson['judul']); ?></h4> -->
+                        <h4><?php echo htmlspecialchars($lesson['nama']); ?></h4>
+                        <!-- <h4 class="subheading"><?php echo htmlspecialchars($lesson['nama']); ?></h4> -->
                     </div>
                     <div class="timeline-body">
-                        <p class="text-muted"><?php echo htmlspecialchars($lesson['ket']); ?></p>
+                        <p class="text-muted"><?php echo htmlspecialchars($lesson['capaian']); ?></p>
                     </div>
                 </div>
             </li>

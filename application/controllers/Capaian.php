@@ -5,13 +5,13 @@ class y extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Gallery_model');
+        $this->load->model('Capaian_model');
     }
 
     public function index() {
-        $data['gallery'] = $this->Gallery_model->get_all_galeri();
+        $data['capaian'] = $this->Capaian_model->get_all_capaian();
         $this->load->view('templates/header');
-        $this->load->view('gallery/index', $data); 
+        $this->load->view('capaian/index', $data); 
         $this->load->view('templates/footer');
     }
 }
