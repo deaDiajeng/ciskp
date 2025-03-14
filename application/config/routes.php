@@ -54,3 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['gallery'] = 'gallery/index';
+$route['login'] = 'login';
+$route['logout'] = 'login/logout';
+$route['dashboard'] = 'admin/dashboard';
