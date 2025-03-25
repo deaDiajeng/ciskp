@@ -11,7 +11,6 @@ class Login extends CI_Controller {
     }
 
     public function index() {
-        // $data['gallery'] = $this->Gallery_model->get_all_galeri();
         $this->load->view('layout/header');
         $this->load->view('login'); 
         $this->load->view('layout/footer');
