@@ -7,7 +7,7 @@ class Login extends CI_Controller {
         parent::__construct();
         $this->load->library('session');
         $this->load->helper('url');
-        $this->load->model('User_model');
+        $this->load->model('User_model', 'Model');
     }
 
     public function index() {
@@ -20,7 +20,7 @@ class Login extends CI_Controller {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
     
-        $user = $this->User_model->check_login($username, $password);
+        $user = $this->Model->check_login($username, $password);
         
         if ($user) {
             $this->session->set_userdata('user_id', $user->id_user);
