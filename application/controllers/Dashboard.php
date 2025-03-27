@@ -10,8 +10,8 @@ class Dashboard extends CI_Controller {
 
     public function index() {
         // $data[''] = $this->Dashboard_model->get_all_dashboard();
-        $this->load->view('templates/header');
-        $this->load->view('dashboard'); 
-        $this->load->view('templates/footer');
+        $this->load->view('layout/header');
+        $this->load->view('admin/dashboard');
+        $this->load->view('layout/footer');
     }
 }
