@@ -10,10 +10,11 @@ class Gallery extends CI_Controller {
 
     public function index() {
         // $data['gallery'] = $this->Gallery_model->get_all_galeri();
-        echo "ini adalah halaman gallery";
 
-        $this->load->view('templates/header');
-        $this->load->view('gallery'); 
-        $this->load->view('templates/footer');
+        $this->load->view('layout/header');
+        $this->load->view('layout/adminav');
+        $this->load->view('admin/gallery');
+        $this->load->view('layout/sidebar');
+        $this->load->view('layout/footer');
     }
 }

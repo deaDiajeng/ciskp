@@ -9,10 +9,11 @@ class Capaian extends CI_Controller {
     }
 
     public function index() {
-        echo "ini adalah halaman capaian";
         // $data['capaian'] = $this->Capaian_model->get_all_capaian();
-        $this->load->view('templates/header');
-        $this->load->view('capaian'); 
-        $this->load->view('templates/footer');
+        $this->load->view('layout/header');
+        $this->load->view('layout/adminav');
+        $this->load->view('admin/capaian'); 
+        $this->load->view('layout/sidebar');
+        $this->load->view('layout/footer');
     }
 }
