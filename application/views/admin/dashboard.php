@@ -1,24 +1,15 @@
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Main Content -->
-            <div id="content">
-                
-            <!-- adminav -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
                     <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
-
-                    <!-- Sample Content -->
+                </div>
+                
+                    <!-- Content Row -->
                     <div class="row">
                         <div class="col-lg-12 mb-4">
                             <!-- Content Sample 1 -->
@@ -35,13 +26,11 @@
                     </div>
                     <!-- /.row -->
 
-                </div>
-                <!-- /.container-fluid -->
             </div>
-            <!-- End of Main Content -->
-
+            <!-- /.container-fluid -->
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
     </div>
-    <!-- End of Page Wrapper -->
-</body>
+    <!-- End of Content Wrapper -->
+</div>
+<!-- End of Page Wrapper -->

@@ -12,8 +12,8 @@ class Dashboard extends CI_Controller {
         // $data[''] = $this->Dashboard_model->get_all_dashboard();
         $this->load->view('layout/header');
         $this->load->view('layout/adminav');
-        $this->load->view('admin/dashboard');
         $this->load->view('layout/sidebar');
+        $this->load->view('admin/dashboard');
         $this->load->view('layout/footer');
     }
 }
