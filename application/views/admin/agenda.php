@@ -49,13 +49,11 @@
                                                         Edit
                                                     </a>
 
-
                                                     <a href="<?= base_url('Agenda/delete/' . $row->id_agenda) ?>"
                                                         class="btn btn-sm btn-danger"
                                                         onclick="return confirm('Yakin ingin menghapus agenda ini?')">
                                                         Delete
                                                     </a>
-
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -107,7 +105,6 @@
                             <br>
                             <img id="preview-old-image" src="" alt="Gambar lama" width="120" class="mt-2" style="display: none;">
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Simpan</button>

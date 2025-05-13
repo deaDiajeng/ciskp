@@ -22,6 +22,7 @@ class Agenda extends CI_Controller
         $this->load->view('layout/footer');
     }
 
+
     public function save()
     {
         //tes gitgraph
@@ -99,7 +100,7 @@ class Agenda extends CI_Controller
                 }
             } else {
                 $this->session->set_flashdata('error', $this->upload->display_errors());
-                redirect('Agenda');
+                redirect('agenda');
                 return;
             }
         } else {
@@ -116,7 +117,7 @@ class Agenda extends CI_Controller
         $this->db->update('agenda', $data);
 
         $this->session->set_flashdata('success', 'Agenda berhasil diperbarui.');
-        redirect('Agenda');
+        redirect('agenda');
     }
 
 
@@ -141,6 +142,6 @@ class Agenda extends CI_Controller
             $this->session->set_flashdata('error', 'Agenda tidak ditemukan.');
         }
 
-        redirect('Agenda');
+        redirect('agenda');
     }
 }

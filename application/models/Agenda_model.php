@@ -25,11 +25,6 @@ class Agenda_model extends CI_Model
         $this->db->where('id_agenda', $id)->update('agenda', $data);
     }
 
-
-    // public function update($id, $data) {
-    //     $this->db->where('id_agenda', $id)->update('agenda', $data);
-    // }
-
     // public function soft_delete($id) {
     //     $this->db->where('id_agenda', $id)->update('agenda', ['is_deleted' => 1]);
     // }
