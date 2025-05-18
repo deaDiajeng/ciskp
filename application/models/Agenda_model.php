@@ -15,6 +15,14 @@ class Agenda_model extends CI_Model
         return $this->db->get_where('agenda', ['is_deleted' => 0])->result();
     }
 
+    // public function get_all_index()
+    // {
+    //     // Ambil field yang sesuai, sesuaikan dengan nama kolom di database
+    //     return $this->db->select('gambar, judul, tgl')
+    //         ->get_where('agenda', ['is_deleted' => 0])
+    //         ->result();
+    // }
+
     public function insert($data)
     {
         $this->db->insert('agenda', $data);

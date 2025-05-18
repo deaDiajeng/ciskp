@@ -11,8 +11,8 @@ class Gallery_model extends CI_Model
     }
     public function get_all() 
     {
-        // return $this->db->get('gallery')->result();
-        return $this->db->get_where('gallery', ['is_deleted' => 0])->result();
+        return $this->db->get('gallery')->result();
+        // return $this->db->get_where('gallery', ['is_deleted' => 0])->result();
     }
 
     public function insert($data) 

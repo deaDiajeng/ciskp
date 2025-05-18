@@ -30,5 +30,11 @@
                 <span>Galeri</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="CMSMenu">
+                <i class="fas fa-images"></i>
+                <span>Menu CMS</span>
+            </a>
+        </li>
     </ul>
     <!-- End of Sidebar -->
