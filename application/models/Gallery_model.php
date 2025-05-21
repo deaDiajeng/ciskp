@@ -15,6 +15,14 @@ class Gallery_model extends CI_Model
         // return $this->db->get_where('gallery', ['is_deleted' => 0])->result();
     }
 
+    // public function get_all_index()
+    // {
+    //     // Ambil field yang sesuai, sesuaikan dengan nama kolom di database
+    //     return $this->db->select('event, image')
+    //         ->get_where('gallery', ['is_deleted' => 0])
+    //         ->result();
+    // }
+
     public function insert($data) 
     {
         $this->db->insert('gallery', $data);
@@ -26,6 +34,6 @@ class Gallery_model extends CI_Model
     }
 
     // public function soft_delete($id) {
-    //     $this->db->where('id_gallery', $id)->update('aggallerynda', ['is_deleted' => 1]);
+    //     $this->db->where('id_gallery', $id)->update('gallery', ['is_deleted' => 1]);
     // }
 }

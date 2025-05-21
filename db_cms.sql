@@ -79,7 +79,7 @@ CREATE TABLE `cms_menu_settings` (
 INSERT INTO `cms_menu_settings` (`id`, `menu_name`, `is_active`) VALUES
 (1, 'agenda', 1),
 (2, 'hafalan', 1),
-(3, 'galery', 1);
+(3, 'galLery', 1);
 
 -- --------------------------------------------------------
 
@@ -91,6 +91,7 @@ CREATE TABLE `gallery` (
   `id_gallery` int NOT NULL,
   `event` varchar(75) NOT NULL,
   `image` varchar(255) NOT NULL
+  `is_deleted` tinyint NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------

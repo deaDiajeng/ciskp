@@ -11,9 +11,17 @@ class Capaian_model extends CI_Model
     }
     public function get_all() 
     {
-        // return $this->db->get('achievement')->result();
-        return $this->db->get_where('achievement', ['is_deleted' => 0])->result();
+        return $this->db->get('achievement')->result();
+        // return $this->db->get_where('achievement', ['is_deleted' => 0])->result();
     }
+
+    // public function get_all_index()
+    // {
+    //     // Ambil field yang sesuai, sesuaikan dengan nama kolom di database
+    //     return $this->db->select('name, achievement, image')
+    //         ->get_where('achievement', ['is_deleted' => 0])
+    //         ->result();
+    // }
 
     public function insert($data) 
     {

@@ -33,7 +33,7 @@
                                                 <td><?= $row->event ?></td>
                                                 <td class="">
                                                     <div style="width: 50px; height: 50px; display: inline-block; background: #f8f9fa; border: 1px solid #ddd; padding: 4px;">
-                                                        <img src="<?= base_url('uploads/galeri/' . $row->image) ?>" alt="<?= $row->title ?>"
+                                                        <img src="<?= base_url('uploads/gallery/' . $row->image) ?>" alt="<?= $row->event ?>"
                                                             style="width: 100%; height: 100%; object-fit: contain;">
                                                     </div>
                                                 </td>
@@ -46,9 +46,9 @@
                                                         Edit
                                                     </a>
 
-                                                    <a href="<?= base_url('Gallery/delete/' . $row->id_agenda) ?>"
+                                                    <a href="<?= base_url('Galeri/delete/' . $row->id_gallery) ?>"
                                                         class="btn btn-sm btn-danger"
-                                                        onclick="return confirm('Yakin ingin menghapus gambar ini?')">
+                                                        onclick="return confirm('Yakin ingin menghapus gallery ini?')">
                                                         Delete
                                                     </a>
                                                 </td>
@@ -73,27 +73,27 @@
     <!-- End of Content Wrapper -->
 
     <!-- Modal: Tambah / Edit Agenda -->
-    <div class="modal fade" id="agendaModal" tabindex="-1" role="dialog" aria-labelledby="agendaModalLabel" aria-hidden="true">
+    <div class="modal fade" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="galleryModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form action="<?= base_url('Gallery/save') ?>" method="post" enctype="multipart/form-data" id="form-agenda">
+            <form action="<?= base_url('Gallery/save') ?>" method="post" enctype="multipart/form-data" id="form-gallery">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="agendaModalLabel">Tambah Agenda</h5>
+                        <h5 class="modal-title" id="galleryModalLabel">Tambah Galeri</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <input type="hidden" name="id_agenda" id="id_agenda">
+                        <input type="hidden" name="id_gallery" id="id_gallery">
 
                         <div class="form-group">
-                            <label for="event">Nama Kegiatan</label>
+                            <label for="title">Kegiatan</label>
                             <input type="text" class="form-control" name="event" id="event" required>
                         </div>
                         <input type="hidden" name="old_image" id="old_image">
 
                         <div class="form-group">
-                            <label for="image">Gambar (jika ingin mengganti)</label>
+                            <label for="image">Gambar</label>
                             <input type="file" class="form-control" name="image" id="image">
                             <br>
                             <img id="preview-old-image" src="" alt="Gambar lama" width="120" class="mt-2" style="display: none;">
