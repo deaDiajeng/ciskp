@@ -100,7 +100,7 @@
                         <input type="hidden" name="old_image" id="old_image">
 
                         <div class="form-group">
-                            <label for="image">Gambar (jika ingin mengganti)</label>
+                            <label for="image">Gambar</label>
                             <input type="file" class="form-control" name="image" id="image">
                             <br>
                             <img id="preview-old-image" src="" alt="Gambar lama" width="120" class="mt-2" style="display: none;">

@@ -40,7 +40,7 @@ class Gallery extends CI_Controller
             // Tambahkan timestamp ke nama file
             $original_name = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
             $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            $timestamp = date('Ymd_His');
+            // $timestamp = date('Ymd_His');
             $new_name = $original_name . '_' . $timestamp . '.' . $extension;
 
             $_FILES['image']['name'] = $new_name;
@@ -82,7 +82,7 @@ class Gallery extends CI_Controller
             // Rename file dengan timestamp
             $original_name = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
             $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            $timestamp = date('Ymd_His');
+            // $timestamp = date('Ymd_His');
             $new_name = $original_name . '_' . $timestamp . '.' . $extension;
 
             $_FILES['image']['name'] = $new_name;
