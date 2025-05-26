@@ -5,16 +5,132 @@ include 'layout/navbar.php';
 ?>
 
 <!-- Masthead-->
-<section class="masthead">
+<!-- <section class="masthead">
     <div class="container">
         <div class="masthead-subheading">Membentuk Generasi Pecinta Al Quran</div>
         <div class="masthead-heading text-uppercase">Cerdas, Kreatif dan Mandiri</div>
     </div>
-</section>
+</section> -->
+
+<div class="container py-5">
+        <div class="row py-3">
+            <div class="col-lg-7 mb-4">
+                <h1>SD IT Naevaweb School</h1>
+                <h4>Menjadi Sekolah yang menyenangkan bagi siswa</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                <p><button type="button" class="btn btn-dark">Info PPDB</button> <button type="button" class="btn btn-outline-dark">Profil Sekolah</button></p>
+            </div>
+            <div class="col-lg-5 mb-4">
+                <img src="https://naevaschool.naevaweb.my.id/userfiles/uploads/bg-edukasi-246.jpg" class="d-block w-100 rounded" alt="...">
+            </div>
+        </div>
+    </div>
+    <!-- Capaian Hafalan  -->
+    <?php if (!empty($capaian)) : ?>
+    <div id="capaianCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+            <?php
+            $chunked = array_chunk($capaian, 3); // Bagi isi jadi 3 item per slide
+            foreach ($chunked as $index => $group) : ?>
+                <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                    <div class="row">
+                        <?php foreach ($group as $item): ?>
+                            <div class="col-lg-4 col-sm-6 mb-4">
+                                <div class="bg-light border text-center p-4 rounded">
+                                    <div class="pb-3"><i class="fas fa-award fa-2x"></i></div>
+                                    <h4 class="text-uppercase"><?= htmlspecialchars($item['nama']); ?></h4>
+                                    <p class="text-muted"><?= htmlspecialchars($item['capaian']); ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <!-- Tombol prev/next -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#capaianCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#capaianCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+<?php else : ?>
+    <div class="col-12 text-center py-5">
+        <i class="fas fa-book-open fa-3x text-muted mb-3"></i>
+        <p class="text-muted">Tidak ada capaian saat ini.</p>
+    </div>
+<?php endif; ?>
+
 
 <!-- Section: Agenda --> 
 <section class="page-section bg-light <?= isset($menu_status['agenda']) && !$menu_status['agenda'] ? 'd-none' : '' ?>" id="agenda">
+    <div class="container pb-5">
+        <div class="row pb-3 align-items-top">
+            <!-- gallery sekolah  -->
+        <section class="page-section bg-light <?= isset($menu_status['galery']) && !$menu_status['galery'] ? 'd-none' : '' ?>" id="galery">
     <div class="container">
+        <div class="row">
+            <!-- Kolom GALLERY SEKOLAH dengan Carousel -->
+            <div class="col-lg-5 mb-4">
+                <div class="p-3 bg-dark text-white rounded shadow">
+                    <h4 class="text-uppercase mb-3">Gallery Sekolah</h4>
+
+                    <?php if (!empty($galery)) : ?>
+                        <div id="carouselGaleri" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <?php foreach ($galery as $index => $item): ?>
+                                    <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+                                        <img class="d-block w-100 rounded"
+                                             src="<?= base_url('public/img/gallery/' . htmlspecialchars($item['gambar'])); ?>"
+                                             alt="<?= htmlspecialchars($item['kegiatan']); ?>">
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php else : ?>
+                        <div class="text-center py-5">
+                            <i class="fas fa-images fa-3x text-muted mb-3"></i>
+                            <p class="text-muted">Tidak ada gambar di galeri.</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <!-- kegiatan sekolah  -->
+            <div class="col-xxl-7 col-lg-6 mb-3 mb-lg-4"> 
+                <div class="h5 text-uppercase">Kegiatan Sekolah</div>
+                <div class="d-flex py-3 border-bottom">
+                    <div class="row">
+                        <?php if (!empty($agenda)) : ?>
+                            <?php foreach ($agenda as $event): ?>
+                                <div class="d-flex align-items-center mb-4">
+                                    <!-- Gambar -->
+                                    <img class="rounded" alt="..." width="100"
+                                        src="<?= base_url('uploads/agenda/' . htmlspecialchars($event->image ?? 'default.jpg')); ?>" 
+                                        alt="<?= htmlspecialchars($event->title ?? 'Tanpa Judul'); ?>" />
+                                    <!-- Teks di sebelah kanan gambar -->
+                                    <div class="ms-3">
+                                        <h4 class="mb-1"><?= htmlspecialchars($event->title ?? 'Tanpa Judul'); ?></h4>
+                                        <p class="small text-secondary mb-0"><?= htmlspecialchars($event->date ?? 'Tanggal tidak tersedia'); ?></p>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else : ?> 
+                            <div class="col-12 text-center py-5">
+                                <i class="fas fa-calendar-alt fa-3x text-muted mb-3"></i>
+                                <p class="text-muted">Tidak ada acara yang tersedia saat ini.</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <!-- <div class="pt-3">
+                    <button type="button" class="btn btn-dark btn-sm">Selengkapnya</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Acara</h2>
         </div>
@@ -38,28 +154,28 @@ include 'layout/navbar.php';
                 </div>
             <?php endif; ?>
         </div>
-    </div>
+    </div> -->
 </section>
 
 
 <!-- Section: Capaian -->
-<section class="page-section <?= isset($menu_status['capaian']) && !$menu_status['capaian'] ? 'd-none' : '' ?>" id="capaian">
+<section class="page-section <?= isset($menu_status['achievement']) && !$menu_status['achievement'] ? 'd-none' : '' ?>" id="achievement">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Capaian</h2>
         </div>
         <div class="row">
-            <?php if (!empty($capaian)) : ?>
-                <?php foreach ($capaian as $item): ?>
+            <?php if (!empty($achievement)) : ?>
+                <?php foreach ($achievement as $item): ?>
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <h4><?= htmlspecialchars($item['nama']); ?></h4>
-                    <p class="text-muted"><?= htmlspecialchars($item['capaian']); ?></p>
+                    <p class="text-muted"><?= htmlspecialchars($item['achievement']); ?></p>
                 </div>
                 <?php endforeach; ?>
             <?php else : ?>
                 <div class="col-12 text-center py-5">
                     <i class="fas fa-book-open fa-3x text-muted mb-3"></i>
-                    <p class="text-muted">Tidak ada capaian saat ini.</p>
+                    <p class="text-muted">Tidak ada achievement saat ini.</p>
                 </div>
             <?php endif; ?>
         </div>
@@ -67,7 +183,7 @@ include 'layout/navbar.php';
 </section>
 
 <!-- Section: Gallery -->
-<section class="page-section bg-light <?= isset($menu_status['galery']) && !$menu_status['galery'] ? 'd-none' : '' ?>" id="galery">
+<!-- <section class="page-section bg-light <?= isset($menu_status['galery']) && !$menu_status['galery'] ? 'd-none' : '' ?>" id="galery">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Galeri</h2>
@@ -88,7 +204,7 @@ include 'layout/navbar.php';
             <?php endif; ?>
         </div>
     </div>
-</section>
+</section> -->
 
 
 
