@@ -7,8 +7,8 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Rumah Quran Insan Toda</title>
-    <!-- <link rel="icon" type="image/x-icon" href="public/rq.png"> -->
+    <title>RQ Insan Toda</title>
+    <link rel="icon" type="image/x-icon" href="uploads/logoRQ.png">
 
     <!-- Font Library -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />

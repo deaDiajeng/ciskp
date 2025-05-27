@@ -13,5 +13,13 @@
         
         <!-- Custom scripts for all pages-->
         <!-- <script src="assets/js/sb-admin-2.min.js"></script> -->
+         <div class="bg-dark text-white py-3 border-top border-secondary">
+            <div class="container">
+                <div class="d-lg-flex justify-content-between">
+                    <div class="mb-2 mb-lg-0">Copyright &copy; 2025</div>
+                    <div class="mb-2 mb-lg-0">Template by <a href="https://naevaweb.com" class="text-white text-decoration-none">Naevaweb.com</a></div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
