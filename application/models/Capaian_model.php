@@ -11,8 +11,8 @@ class Capaian_model extends CI_Model
     }
     public function get_all() 
     {
-        return $this->db->get('achievement')->result();
-        // return $this->db->get_where('achievement', ['is_deleted' => 0])->result();
+        // return $this->db->get('achievement')->result();
+        return $this->db->get_where('achievement', ['is_deleted' => 0])->result();
     }
 
     // public function get_all_index()

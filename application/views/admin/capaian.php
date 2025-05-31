@@ -43,7 +43,7 @@
                                                     <a href="#" class="btn btn-sm btn-warning btn-edit"
                                                         data-id="<?= $row->id_achievement ?>"
                                                         data-name="<?= htmlspecialchars($row->name, ENT_QUOTES) ?>"
-                                                        data-achievement="<?= $row->achievement ?>"
+                                                        data-achievement="<?= htmlspecialchars($row->achievement, ENT_QUOTES) ?>"
                                                         data-image="<?= $row->image ?>"
                                                         data-toggle="modal" data-target="#capaianModal">
                                                         Edit

@@ -33,7 +33,7 @@
                                                 <td><?= $row->event ?></td>
                                                 <td class="">
                                                     <div style="width: 50px; height: 50px; display: inline-block; background: #f8f9fa; border: 1px solid #ddd; padding: 4px;">
-                                                        <img src="<?= base_url('uploads/gallery/' . $row->image) ?>" alt="<?= $row->event ?>"
+                                                        <img src="<?= base_url('uploads/galeri/' . $row->image) ?>" alt="<?= $row->event ?>"
                                                             style="width: 100%; height: 100%; object-fit: contain;">
                                                     </div>
                                                 </td>

@@ -25,7 +25,6 @@ class Capaian extends CI_Controller
     
     public function save()
     {
-        //tes gitgraph
         $name = $this->input->post('name');
         $achievement = $this->input->post('achievement');
 
@@ -40,7 +39,7 @@ class Capaian extends CI_Controller
             // Tambahkan timestamp ke nama file
             $original_name = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
             $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            // $timestamp = date('Ymd_His'); ini kahh?
+            $timestamp = date('Ymd_His'); 
             $new_name = $original_name . '_' . $timestamp . '.' . $extension;
 
             $_FILES['image']['name'] = $new_name;
