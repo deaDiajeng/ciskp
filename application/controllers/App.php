@@ -11,11 +11,12 @@ class App extends CI_Controller
         
         $menu_status = [];
         foreach ($menu_settings as $menu) {
-            $menu_status[$menu['menu_name']] = $menu['is_active'];
+            $menus = $menu['is_active'];
+            $menu_status = [$menu['menu_name']];
         }
 
         // Ambil data agenda hanya jika menu agenda aktif
-        if (isset($menu_status['agenda']) && $menu_status['agenda']) {
+        if (isset($menu_status['agenda']) && $menus['agenda']) {
             $this->load->model('Agenda_model');
             $data['agenda'] = $this->Agenda_model->get_all();
         } else {
@@ -23,19 +24,19 @@ class App extends CI_Controller
         }
 
         // Ambil data capaian hanya jika menu capaian aktif
-        if (isset($menu_status['capaian']) && $menu_status['capaian']) {
+        if (isset($menu_status['hafalan']) && $menus['hafalan']) {
             $this->load->model('Capaian_model');
-            $data['capaian'] = $this->Capaian_model->get_all();
+            $data['hafalan'] = $this->Capaian_model->get_all();
         } else {
-            $data['capaian'] = [];
+            $data['hafalan'] = [];
         }
 
         // Ambil data galeri hanya jika menu galeri aktif
-        if (isset($menu_status['galery']) && $menu_status['galery']) {
+        if (isset($menu_status['gallery']) && $menus['gallery']) {
             $this->load->model('Gallery_model');
-            $data['galery'] = $this->Gallery_model->get_all();
+            $data['gallery'] = $this->Gallery_model->get_all();
         } else {
-            $data['galery'] = [];
+            $data['gallery'] = [];
         }
 
         // Kirim status menu dan data ke view utama

@@ -5,12 +5,12 @@ include 'layout/navbar.php';
 ?>
 
 <!-- Masthead-->
-<!-- <section class="masthead">
+<section class="masthead">
     <div class="container">
-        <div class="masthead-subheading">Membentuk Generasi Pecinta Al Quran</div>
-        <div class="masthead-heading text-uppercase">Cerdas, Kreatif dan Mandiri</div>
+        <div class="masthead-subheading">Selamat datang di</div>
+        <div class="masthead-heading text-uppercase">RUMAH QURAN INSAN TODA</div>
     </div>
-</section> -->
+</section>
 
 <div class="container py-5">
         <div class="row py-3">
@@ -18,7 +18,10 @@ include 'layout/navbar.php';
                 <h1>RUMAH QUR'AN INSAN TODA</h1>
                 <h4>Menjadi Sekolah yang menyenangkan bagi siswa</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                <p><button type="button" class="btn btn-dark">Info PPDB</button> <button type="button" class="btn btn-outline-dark">Profil Sekolah</button></p>
+                <p>
+                    <a href="daftar.php" class="btn btn-dark">DAFTAR</a>
+                    <!-- <button type="button" class="btn btn-outline-dark">Profil Sekolah</button> -->
+                </p>
             </div>
             <div class="col-lg-5 mb-4">
                 <img src="https://naevaschool.naevaweb.my.id/userfiles/uploads/bg-edukasi-246.jpg" class="d-block w-100 rounded" alt="...">
@@ -26,11 +29,11 @@ include 'layout/navbar.php';
         </div>
     </div>
     <!-- Capaian Hafalan  -->
-    <?php if (!empty($capaian)) : ?>
+    <?php if (!empty($hapalan)) : ?>
     <div id="capaianCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
             <?php
-            $chunked = array_chunk($capaian, 3); // Bagi isi jadi 3 item per slide
+            $chunked = array_chunk($hapalan, 3); // Bagi isi jadi 3 item per slide
             foreach ($chunked as $index => $group) : ?>
                 <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
                     <div class="row">
@@ -69,7 +72,7 @@ include 'layout/navbar.php';
     <div class="container pb-5">
         <div class="row pb-3 align-items-top">
             <!-- gallery sekolah  -->
-        <section class="page-section bg-light <?= isset($menu_status['galery']) && !$menu_status['galery'] ? 'd-none' : '' ?>" id="galery">
+        <section class="page-section bg-light <?= isset($menu_status['gallery']) && !$menu_status['gallery'] ? 'd-none' : '' ?>" id="galery">
     <div class="container">
         <div class="row">
             <!-- Kolom GALLERY SEKOLAH dengan Carousel -->
@@ -77,14 +80,14 @@ include 'layout/navbar.php';
                 <div class="p-3 bg-dark text-white rounded shadow">
                     <h4 class="text-uppercase mb-3">Gallery Sekolah</h4>
 
-                    <?php if (!empty($galery)) : ?>
+                    <?php if (!empty($gallery)) : ?>
                         <div id="carouselGaleri" class="carousel slide carousel-fade" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <?php foreach ($galery as $index => $item): ?>
+                                <?php foreach ($gallery as $index => $item): ?>
                                     <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
                                         <img class="d-block w-100 rounded"
-                                             src="<?= base_url('public/img/gallery/' . htmlspecialchars($item['gambar'])); ?>"
-                                             alt="<?= htmlspecialchars($item['kegiatan']); ?>">
+                                             src="<?= base_url('public/img/gallery/' . htmlspecialchars($item['image'])); ?>"
+                                             alt="<?= htmlspecialchars($item['event']); ?>">
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -211,8 +214,8 @@ include 'layout/navbar.php';
             <div class="fs-2 mb-3">Segera Daftar!</div>
                 <p>Penerimaan Peserta Didik Baru Rumah Qur'an Insan Toda</p>
             <div class="pt-2">
-                <button type="button" class="btn btn-outline-light me-2">Info Lebih Lanjut</button>
-                <button type="button" class="btn btn-outline-light">Daftar Sekarang</button>
+                <a href="https://wa.me/6283819937178" target="_blank" class="btn btn-outline-light me-2">Info Lebih Lanjut</a>
+                <a href="<?= site_url('daftar') ?>" class="btn btn-outline-light">Daftar Sekarang</a>
             </div>
         </div>
     </div>

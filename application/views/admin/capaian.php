@@ -10,6 +10,13 @@
                     <button class="btn btn-primary" data-toggle="modal" data-target="#capaianModal">Tambah Capaian</button>
                 </div>
 
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-primary"><?= $this->session->flashdata('success'); ?></div>
+                <?php endif; ?>
+                <?php if ($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
+                <?php endif; ?>
+
                 <!-- Content Row -->
                 <div class="row">
                     <div class="col-lg-12 mb-4">
@@ -75,7 +82,7 @@
     </div>
     <!-- End of Content Wrapper -->
 
-    <!-- Modal: Tambah / Edit Agenda -->
+    <!-- Modal: Tambah / Edit capaian -->
     <div class="modal fade" id="capaianModal" tabindex="-1" role="dialog" aria-labelledby="capaianModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <form action="<?= base_url('Capaian/save') ?>" method="post" enctype="multipart/form-data" id="form-capaian">
@@ -87,7 +94,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <input type="hidden" name="id_achievement" id="achievement">
+                        <input type="hidden" name="id_achievement" id="id_achievement">
 
                         <div class="form-group">
                             <label for="name">Nama</label>

@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Capaian extends CI_Controller 
 {
 
-    public function __construct() 
+    public function __construct()
     {
         parent::__construct();
         $this->load->model('Capaian_model');
@@ -49,7 +49,7 @@ class Capaian extends CI_Controller
             } else {
                 $error = $this->upload->display_errors();
                 $this->session->set_flashdata('error', $error);
-                redirect('achievement');
+                redirect('capaian');
                 return;
             }
         }
@@ -62,7 +62,8 @@ class Capaian extends CI_Controller
         ];
 
         $this->Capaian_model->insert($data);
-        redirect('achievement');
+        $this->session->set_flashdata('success', 'isi pesan');
+        redirect('capaian');
     }
 
 
@@ -82,8 +83,8 @@ class Capaian extends CI_Controller
         if (!empty($_FILES['image']['name'])) {
             // Rename file dengan timestamp
             $original_name = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
+            $timestamp = date('Ymd_His');
             $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            // $timestamp = date('Ymd_His');
             $new_name = $original_name . '_' . $timestamp . '.' . $extension;
 
             $_FILES['image']['name'] = $new_name;
@@ -99,7 +100,7 @@ class Capaian extends CI_Controller
                 }
             } else {
                 $this->session->set_flashdata('error', $this->upload->display_errors());
-                redirect('achievement');
+                redirect('capaian');
                 return;
             }
         } else {
@@ -116,16 +117,16 @@ class Capaian extends CI_Controller
         $this->db->update('achievement', $data);
 
         $this->session->set_flashdata('success', 'Capaian berhasil diperbarui.');
-        redirect('achievement');
+        redirect('capaian');
     }
 
 
     public function delete($id)
     {
         // Ambil data agenda berdasarkan id
-        $agenda = $this->db->get_where('achievement', ['id_achievement' => $id])->row();
+        $capaian = $this->db->get_where('achievement', ['id_achievement' => $id])->row();
 
-        if ($achievement) {
+        if ($capaian) {
             // Hapus file gambar jika ada
             $path = './uploads/capaian/' . $achievement->image;
             if (file_exists($path) && is_file($path)) {
@@ -141,6 +142,6 @@ class Capaian extends CI_Controller
             $this->session->set_flashdata('error', 'Capaian tidak ditemukan.');
         }
 
-        redirect('achievement');
+        redirect('capaian');
     }
 }

@@ -9,6 +9,13 @@
                     <h1 class="h3 text-gray-800">Galeri</h1>
                     <button class="btn btn-primary" data-toggle="modal" data-target="#galleryModal">Tambah Galeri</button>
                 </div>
+                
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-primary"><?= $this->session->flashdata('success'); ?></div>
+                <?php endif; ?>
+                <?php if ($this->session->flashdata('error')): ?>
+                    <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
+                <?php endif; ?>
 
                 <!-- Content Row -->
                 <div class="row">
@@ -46,7 +53,7 @@
                                                         Edit
                                                     </a>
 
-                                                    <a href="<?= base_url('Galeri/delete/' . $row->id_gallery) ?>"
+                                                    <a href="<?= base_url('gallery/delete/' . $row->id_gallery) ?>"
                                                         class="btn btn-sm btn-danger"
                                                         onclick="return confirm('Yakin ingin menghapus gallery ini?')">
                                                         Delete

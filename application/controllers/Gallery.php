@@ -29,7 +29,7 @@ class Gallery extends CI_Controller
         $event = $this->input->post('event');
         // $image = $this->input->post('image');
 
-        $config['upload_path'] = './uploads/gallery/';
+        $config['upload_path'] = './uploads/galeri/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
         $config['max_size'] = 2048;
 
@@ -39,6 +39,7 @@ class Gallery extends CI_Controller
         if (!empty($_FILES['image']['name'])) {
             // Tambahkan timestamp ke nama file
             $original_name = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
+            $timestamp = date('Ymd_His'); 
             $extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
             // $timestamp = date('Ymd_His');
             $new_name = $original_name . '_' . $timestamp . '.' . $extension;
@@ -62,6 +63,7 @@ class Gallery extends CI_Controller
         ];
 
         $this->Gallery_model->insert($data);
+        $this->session->set_flashdata('success', 'isi pesan');
         redirect('gallery');
     }
 
