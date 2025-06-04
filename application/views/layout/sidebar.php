@@ -13,9 +13,9 @@
         <div class="sidebar-heading">CMS</div>
 
         <li class="nav-item">
-            <a class="nav-link" href="Agenda">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Acara</span>
+            <a class="nav-link" href="CMSMenu">
+                <i class="fas fa-images"></i>
+                <span>CMS</span>
             </a>
         </li>
         <li class="nav-item">
@@ -31,9 +31,15 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="CMSMenu">
+            <a class="nav-link" href="Agenda">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Kegiatan</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Daftar">
                 <i class="fas fa-images"></i>
-                <span>Menu CMS</span>
+                <span>Pendafaran</span>
             </a>
         </li>
     </ul>

@@ -10,6 +10,9 @@
                     <button class="btn btn-primary" data-toggle="modal" data-target="#agendaModal">Tambah Acara</button>
                 </div>
 
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-primary"><?= $this->session->flashdata('success'); ?></div>
+                <?php endif; ?>
                 <?php if ($this->session->flashdata('error')): ?>
                     <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
                 <?php endif; ?>

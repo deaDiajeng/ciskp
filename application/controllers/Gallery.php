@@ -63,7 +63,7 @@ class Gallery extends CI_Controller
         ];
 
         $this->Gallery_model->insert($data);
-        $this->session->set_flashdata('success', 'isi pesan');
+        $this->session->set_flashdata('success', 'Gallery berhasil ditambahkan');
         redirect('gallery');
     }
 

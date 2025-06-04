@@ -62,7 +62,7 @@ class Capaian extends CI_Controller
         ];
 
         $this->Capaian_model->insert($data);
-        $this->session->set_flashdata('success', 'isi pesan');
+        $this->session->set_flashdata('success', 'Capaian berhasil ditambahkan');
         redirect('capaian');
     }
 

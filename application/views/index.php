@@ -242,10 +242,10 @@ include 'layout/navbar.php';
                 <!-- <a href="https://maps.app.goo.gl/ZDRvYRD6XXpXP6AZ8" target="_blank" class="btn btn-dark">
                     <i class="fas fa-map-marker-alt"></i>
                 </a> -->
-                <a href="https://wa.me/6283819937178" target="_blank" class="btn btn-dark">
+                <a href="https://wa.me/6283819937178" target="_blank" class="btn btn-success">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://instagram.com/diajenglarasati_272" target="_blank" class="btn btn-dark">
+                <a href="https://instagram.com/diajenglarasati_272" target="_blank" class="btn btn-danger">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>

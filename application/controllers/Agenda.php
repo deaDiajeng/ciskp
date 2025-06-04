@@ -63,6 +63,7 @@ class Agenda extends CI_Controller
         ];
 
         $this->Agenda_model->insert($data);
+        $this->session->set_flashdata('success', 'Agenda berhasil ditambahkan');
         redirect('agenda');
     }
 
