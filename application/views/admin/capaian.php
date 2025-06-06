@@ -85,7 +85,7 @@
     <!-- Modal: Tambah / Edit capaian -->
     <div class="modal fade" id="capaianModal" tabindex="-1" role="dialog" aria-labelledby="capaianModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form action="<?= base_url('Capaian/save') ?>" method="post" enctype="multipart/form-data" id="form-capaian">
+            <form method="post" enctype="multipart/form-data" id="form-capaian">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="capaianModalLabel">Tambah Capaian</h5>
