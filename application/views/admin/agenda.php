@@ -27,7 +27,7 @@
                                     <tr>
                                         <th class="text-center">No</th>
                                         <th class="text-center">Judul</th>
-                                        <th class="text-center">Tanggal</th>
+                                        <th class="text-center">Deskripsi Singkat</th>
                                         <th class="text-center">Foto</th>
                                         <th class="text-center">Act</th>
                                     </tr>
@@ -40,7 +40,8 @@
                                             <tr>
                                                 <td class="text-center"><?= $no++ ?></td>
                                                 <td><?= $row->title ?></td>
-                                                <td class="text-center"><?= date('d M Y', strtotime($row->date)) ?></td>
+                                                <td><?= $row->descript ?></td>
+                                                <!-- <td class="text-center"><?= date('d M Y', strtotime($row->date)) ?></td> -->
                                                 <td class="">
                                                     <div style="width: 50px; height: 50px; display: inline-block; background: #f8f9fa; border: 1px solid #ddd; padding: 4px;">
                                                         <img src="<?= base_url('uploads/agenda/' . $row->image) ?>" alt="<?= $row->title ?>"
@@ -51,7 +52,7 @@
                                                     <a href="#" class="btn btn-sm btn-warning btn-edit"
                                                         data-id="<?= $row->id_agenda ?>"
                                                         data-title="<?= htmlspecialchars($row->title, ENT_QUOTES) ?>"
-                                                        data-date="<?= $row->date ?>"
+                                                        data-descript="<?= $row->descript ?>"
                                                         data-image="<?= $row->image ?>"
                                                         data-toggle="modal" data-target="#agendaModal">
                                                         Edit
@@ -102,8 +103,8 @@
                             <input type="text" class="form-control" name="title" id="title" required>
                         </div>
                         <div class="form-group">
-                            <label for="date">Tanggal</label>
-                            <input type="date" class="form-control" name="date" id="date" required>
+                            <label for="title">Deskripsi Singkat</label>
+                            <input type="title" class="form-control" name="descript" id="descript" required>
                         </div>
                         <input type="hidden" name="old_image" id="old_image">
 

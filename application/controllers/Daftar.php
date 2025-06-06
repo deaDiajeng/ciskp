@@ -17,10 +17,16 @@ class Daftar extends CI_Controller
 
     public function save()
     {
-        $name = $this->input->post('name');
-        $achievement = $this->input->post('achievement');
-        $nomor = $this->input->post('nomor');
+        $fullname = $this->input->post('fullname');
+        $birth_date = $this->input->post('birth_date');
+        $addres = $this->input->post('address');
+        $school = $this->input->post('school');
+        $grade = $this->input->post('grade');
+        $parent = $this->input->post('parent');
+        $parent_job = $this->input->post('parent_job');
+        $parent_phone = $this->input->post('parent_phone');
 
+        // timestamp buat foto
         // $config['upload_path'] = './uploads/capaian/';
         // $config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
         // $config['max_size'] = 2048;
@@ -48,16 +54,21 @@ class Daftar extends CI_Controller
         // }
 
         $data = [
-            'name' => $name,
-            'achievement' => $achievement,
-            'image' => $image,
-            'phone' => $nomor,
+            'fullname' => $fullname,
+            'birth_date' => $birth_date,
+            'address' => $address,
+            'school' => $school,
+            'grade' => $grade,
+            'parent' => $parent,
+            'parent_job' => $parent_job,
+            'parent_phone' => $parent_phone,
             'is_deleted' => 0
         ];
 
         $this->Daftar_model->insert($data);
-        $this->session->set_flashdata('success', 'isi pesan');
-        redirect('capaian');
+        $this->session->set_flashdata('success', 'Formulir Pendaftaran telah dikirim. 
+        Silahkan konfirmasi pendaftaran ke no Whats App');
+        redirect('index');
     }
 
 }

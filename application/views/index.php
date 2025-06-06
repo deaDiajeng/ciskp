@@ -14,12 +14,13 @@ include 'layout/navbar.php';
 
 <div class="container py-5">
         <div class="row py-3">
-            <div class="col-lg-7 mt-5 mb-4">
+            <div class="col-lg-7 mt-0 mb-4">
                 <h1>RUMAH QUR'AN INSAN TODA</h1>
                 <h4>Menjadi Sekolah yang menyenangkan bagi siswa</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                 <p>
-                    <a href="daftar.php" class="btn btn-dark">DAFTAR</a>
+                    <a href="<?= site_url('daftar') ?>" class="btn btn-dark">Daftar Sekarang</a>
+                    <!-- <a href="daftar.php" class="btn btn-dark">DAFTAR</a> -->
                     <!-- <button type="button" class="btn btn-outline-dark">Profil Sekolah</button> -->
                 </p>
             </div>
@@ -76,7 +77,7 @@ include 'layout/navbar.php';
     <div class="container">
         <div class="row">
             <!-- Kolom GALLERY SEKOLAH dengan Carousel -->
-            <div class="col-lg-5 mb-4">
+            <div class="col-lg-6 mb-4">
                 <div class="p-3 bg-dark text-white rounded shadow">
                     <h4 class="text-uppercase mb-3">Gallery Sekolah</h4>
 
@@ -238,14 +239,14 @@ include 'layout/navbar.php';
                 <h2 class="fw-bold mt-3 text-center">RUMAH QUR'AN INSAN TODA</h2>
                 <p class="text-muted mb-">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-            <div class="d-flex gap-3">
+            <div class="d-flex gap-3 justify-content-center">
                 <!-- <a href="https://maps.app.goo.gl/ZDRvYRD6XXpXP6AZ8" target="_blank" class="btn btn-dark">
                     <i class="fas fa-map-marker-alt"></i>
                 </a> -->
-                <a href="https://wa.me/6283819937178" target="_blank" class="btn btn-success">
+                <a href="https://wa.me/6283819937178" target="_blank" class="btn btn-dark">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="https://instagram.com/diajenglarasati_272" target="_blank" class="btn btn-danger">
+                <a href="https://instagram.com/diajenglarasati_272" target="_blank" class="btn btn-dark">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
