@@ -59,7 +59,7 @@ class Gallery extends CI_Controller
         $data = [
             'event' => $event,
             'image' => $image,
-            'is_deleted' => 0
+            // 'is_deleted' => 0
         ];
 
         $this->Gallery_model->insert($data);
@@ -120,27 +120,31 @@ class Gallery extends CI_Controller
     }
 
 
-    public function delete($id)
-    {
-        // Ambil data agenda berdasarkan id
-        $agenda = $this->db->get_where('gallery', ['id_gallery' => $id])->row();
+public function delete($id)
+{
+    $gallery = $this->db->get_where('gallery', ['id_gallery' => $id])->row();
 
-        if ($agenda) {
-            // Hapus file gambar jika ada
-            $path = './uploads/galeri/' . $gallery->image;
-            if (file_exists($path) && is_file($path)) {
-                unlink($path);
-            }
-
-            // Soft delete (update is_deleted = 1)
-            $this->db->where('id_gallery', $id);
-            $this->db->update('gallery', ['is_deleted' => 1]);
-
-            $this->session->set_flashdata('success', 'Gallery berhasil dihapus.');
-        } else {
-            $this->session->set_flashdata('error', 'Gallery tidak ditemukan.');
+    if ($gallery) {
+        // Hapus file gambar jika ada
+        $path = './uploads/galeri/' . $gallery->image;
+        if (!empty($gallery->image) && file_exists($path) && is_file($path)) {
+            unlink($path);
         }
 
-        redirect('gallery');
+        // Jika kamu ingin soft delete
+        // $this->db->where('id_gallery', $id);
+        // $this->db->update('gallery', ['is_deleted' => 1]);
+
+        // Kalau ingin hard delete
+        $this->db->where('id_gallery', $id);
+        $this->db->delete('gallery');
+
+        $this->session->set_flashdata('success', 'Gallery berhasil dihapus.');
+    } else {
+        $this->session->set_flashdata('error', 'Gallery tidak ditemukan.');
     }
+
+    redirect('gallery');
+}
+
 }
