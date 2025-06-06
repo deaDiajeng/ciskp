@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 18, 2025 at 03:38 PM
+-- Generation Time: Jun 06, 2025 at 03:30 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -35,6 +35,16 @@ CREATE TABLE `achievement` (
   `is_deleted` tinyint NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `achievement`
+--
+
+INSERT INTO `achievement` (`id_achievement`, `name`, `achievement`, `image`, `is_deleted`) VALUES
+(1, 'Tes Data', 'Tidak Ada', 'immortal_20250606_112037.png', 0),
+(2, 'Tes Data', 'Tidak Ade', 'arctic-fox-sitting-stockcake_20250606_112058.jpg', 1),
+(3, 'Tes Data', 'Tidak Ade', '', 1),
+(4, 'Tes Lain', 'Percobaan', 'immortal_20250606_140315.png', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +56,7 @@ CREATE TABLE `agenda` (
   `title` varchar(75) NOT NULL,
   `date` date NOT NULL,
   `image` varchar(100) NOT NULL,
+  `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `is_deleted` tinyint NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -53,12 +64,16 @@ CREATE TABLE `agenda` (
 -- Dumping data for table `agenda`
 --
 
-INSERT INTO `agenda` (`id_agenda`, `title`, `date`, `image`, `is_deleted`) VALUES
-(1, 'Buka Puasa Bersama Mulu', '2025-04-14', 'ID_Card_-_ucup_20250518_153740.jpg', 0),
-(2, 'Hangout', '2025-04-20', 'github_20250511_135528.png', 0),
-(3, 'Tidak ada judull', '2025-05-11', 'linkedin_20250511_135456.png', 1),
-(4, 'Percobaan satu dua', '2025-05-12', 'instagram_20250511_142548.png', 1),
-(5, 'Testing', '2025-05-18', 'ID_Card_-_ucup_20250518_142510.jpg', 1);
+INSERT INTO `agenda` (`id_agenda`, `title`, `date`, `image`, `keterangan`, `is_deleted`) VALUES
+(1, 'Buka Puasa Bersama Mulu', '2025-04-14', 'ID_Card_-_ucup_20250518_153740.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 0),
+(2, 'Hangout', '2025-04-20', 'immortal_20250606_112015.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore\\', 0),
+(3, 'Tidak ada judull', '2025-05-11', 'linkedin_20250511_135456.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 1),
+(4, 'Percobaan satu dua', '2025-05-12', 'instagram_20250511_142548.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 1),
+(5, 'Testing', '2025-05-18', 'ID_Card_-_ucup_20250518_142510.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 1),
+(6, 'Tester More', '2025-06-06', 'immortal_20250606_111743.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 1),
+(7, 'Percobaan', '2025-06-14', 'immortal_20250606_124449.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 0),
+(8, 'tester', '2025-06-12', 'Annotation_2020-07-31_212414_20250606_124502.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 0),
+(9, 'Percobaan', '2025-06-18', 'cosmonaut_astronaut_space_suit_137404_1920x1080_20250606_124515.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', 0);
 
 -- --------------------------------------------------------
 
@@ -78,8 +93,8 @@ CREATE TABLE `cms_menu_settings` (
 
 INSERT INTO `cms_menu_settings` (`id`, `menu_name`, `is_active`) VALUES
 (1, 'agenda', 1),
-(2, 'hafalan', 1),
-(3, 'galLery', 1);
+(2, 'capaian', 1),
+(3, 'gallery', 1);
 
 -- --------------------------------------------------------
 
@@ -91,8 +106,18 @@ CREATE TABLE `gallery` (
   `id_gallery` int NOT NULL,
   `event` varchar(75) NOT NULL,
   `image` varchar(255) NOT NULL
-  `is_deleted` tinyint NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`id_gallery`, `event`, `image`) VALUES
+(1, 'Tes Data', 'immortal_20250606_124256.png'),
+(2, 'Tes Data', 'cosmonaut_astronaut_space_suit_137404_1920x1080_.jpg'),
+(3, 'Tes Data', 'immortal_20250606_124343.png'),
+(4, 'Cobna', 'arctic-fox-sitting-stockcake_20250606_124353.jpg'),
+(5, 'Cobne', 'smp1_20250606_124415.jpg');
 
 -- --------------------------------------------------------
 
@@ -179,13 +204,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `achievement`
 --
 ALTER TABLE `achievement`
-  MODIFY `id_achievement` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_achievement` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_agenda` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `cms_menu_settings`
@@ -197,7 +222,7 @@ ALTER TABLE `cms_menu_settings`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id_gallery` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id_gallery` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `registration`
