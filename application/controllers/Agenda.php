@@ -8,6 +8,7 @@ class Agenda extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Agenda_model');
+        $this->load->helper('text');
     }
 
     public function index()
@@ -28,6 +29,7 @@ class Agenda extends CI_Controller
         //tes gitgraph
         $title = $this->input->post('title');
         $date = $this->input->post('date');
+        $description = $this->input->post('keterangan');
 
         $config['upload_path'] = './uploads/agenda/';
         $config['allowed_types'] = 'jpg|jpeg|png|gif|webp';
@@ -59,7 +61,8 @@ class Agenda extends CI_Controller
             'title' => $title,
             'date' => $date,
             'image' => $image,
-            'is_deleted' => 0
+            'is_deleted' => 0,
+            'keterangan' => $description
         ];
 
         $this->Agenda_model->insert($data);
@@ -73,6 +76,7 @@ class Agenda extends CI_Controller
         $title = $this->input->post('title');
         $date = $this->input->post('date');
         $oldImage = $this->input->post('old_image');
+        $description = $this->input->post('keterangan');
 
         $config['upload_path'] = './uploads/agenda/';
         $config['allowed_types'] = 'jpg|jpeg|png|webp';
@@ -110,6 +114,7 @@ class Agenda extends CI_Controller
         $data = [
             'title' => $title,
             'date' => $date,
+            'keterangan' => $description,
             'image' => $newImage
         ];
 

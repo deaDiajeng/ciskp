@@ -24,6 +24,7 @@
                                     <tr>
                                         <th class="text-center">No</th>
                                         <th class="text-center">Judul</th>
+                                        <th class="text-center">Keterangan</th>
                                         <th class="text-center">Tanggal</th>
                                         <th class="text-center">Foto</th>
                                         <th class="text-center">Act</th>
@@ -37,6 +38,7 @@
                                             <tr>
                                                 <td class="text-center"><?= $no++ ?></td>
                                                 <td><?= $row->title ?></td>
+                                                <td><?= character_limiter(strip_tags($row->keterangan), 20) ?></td>
                                                 <td class="text-center"><?= date('d M Y', strtotime($row->date)) ?></td>
                                                 <td class="">
                                                     <div style="width: 50px; height: 50px; display: inline-block; background: #f8f9fa; border: 1px solid #ddd; padding: 4px;">
@@ -48,6 +50,7 @@
                                                     <a href="#" class="btn btn-sm btn-warning btn-edit"
                                                         data-id="<?= $row->id_agenda ?>"
                                                         data-title="<?= htmlspecialchars($row->title, ENT_QUOTES) ?>"
+                                                        data-keterangan="<?= htmlspecialchars($row->keterangan ?? '', ENT_QUOTES) ?>"
                                                         data-date="<?= $row->date ?>"
                                                         data-image="<?= $row->image ?>"
                                                         data-toggle="modal" data-target="#agendaModal">
@@ -98,6 +101,10 @@
                             <label for="title">Judul</label>
                             <input type="text" class="form-control" name="title" id="title" required>
                         </div>
+<div class="form-group">
+    <label for="keterangan">Keterangan</label>
+    <textarea class="form-control" name="keterangan" id="keterangan" rows="4"></textarea>
+</div>
                         <div class="form-group">
                             <label for="date">Tanggal</label>
                             <input type="date" class="form-control" name="date" id="date" required>
