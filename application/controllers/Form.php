@@ -1,32 +1,26 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Daftar extends CI_Controller
+class Form extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Daftar_model');
+        $this->load->model('Form_model');
     }
 
     public function index()
     {
-        $data['registration'] = $this->Daftar_model->get_all();
-
-        $this->load->view('layout/header');
-        // $this->load->view('layout/adminav');
-        $this->load->view('layout/sidebar');
-        $this->load->view('admin/data_daftar', $data);
-        $this->load->view('script/daftar_script');
-        $this->load->view('layout/footer');
+        
+        $this->load->view('form');
     }
 
     public function save()
     {
         $fullname = $this->input->post('fullname');
         $birth_date = $this->input->post('birth_date');
-        $addres = $this->input->post('address');
+        $address = $this->input->post('address');
         $school = $this->input->post('school');
         $grade = $this->input->post('grade');
         $parent = $this->input->post('parent');
@@ -72,34 +66,10 @@ class Daftar extends CI_Controller
             'is_deleted' => 0
         ];
 
-        // $this->Daftar_model->insert($data);
-        // $this->session->set_flashdata('success', 'Formulir Pendaftaran telah dikirim. 
-        // Silahkan konfirmasi pendaftaran ke no WhatsApp');
-        // redirect('index');
-    }
-
-    public function delete($id)
-    {
-        // Ambil data daftar berdasarkan id
-        $registration = $this->db->get_where('registration', ['id_registration' => $id])->row();
-
-        if ($registration) {
-            // Hapus file gambar jika ada
-            // $path = './uploads/capaian/' . $achievement->image;
-            // if (file_exists($path) && is_file($path)) {
-            //     unlink($path);
-            // }
-
-            // Soft delete (update is_deleted = 1)
-            $this->db->where('id_registration', $id);
-            $this->db->update('registration', ['is_deleted' => 1]);
-
-            $this->session->set_flashdata('success', 'Data berhasil dihapus.');
-        } else {
-            $this->session->set_flashdata('error', 'Data tidak ditemukan.');
-        }
-
-        redirect('Daftar');
+        $this->Form_model->insert($data);
+        $this->session->set_flashdata('success', 'Formulir Pendaftaran telah dikirim. 
+        Silahkan konfirmasi pendaftaran ke no WhatsApp');
+        redirect('');
     }
 
 }

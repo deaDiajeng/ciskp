@@ -24,7 +24,7 @@ class CMSMenu extends CI_Controller
         $data['menu_status'] = $menu_status;
 
         $this->load->view('layout/header');
-        $this->load->view('layout/adminav');
+        // $this->load->view('layout/adminav');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/cms_menu', $data);
         $this->load->view('layout/footer');

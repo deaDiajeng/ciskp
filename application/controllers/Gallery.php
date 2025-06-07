@@ -15,7 +15,7 @@ class Gallery extends CI_Controller
         $data['gallery'] = $this->Gallery_model->get_all();
 
         $this->load->view('layout/header');
-        $this->load->view('layout/adminav');
+        // $this->load->view('layout/adminav');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/gallery', $data);
         $this->load->view('script/gallery_script');
@@ -63,7 +63,7 @@ class Gallery extends CI_Controller
         ];
 
         $this->Gallery_model->insert($data);
-        $this->session->set_flashdata('success', 'Gallery berhasil ditambahkan');
+        $this->session->set_flashdata('success', 'Data Gallery berhasil ditambahkan');
         redirect('gallery');
     }
 
@@ -115,7 +115,7 @@ class Gallery extends CI_Controller
         $this->db->where('id_gallery', $id);
         $this->db->update('gallery', $data);
 
-        $this->session->set_flashdata('success', 'Gallery berhasil diperbarui.');
+        $this->session->set_flashdata('success', 'Data Gallery berhasil diperbarui.');
         redirect('gallery');
     }
 
@@ -136,9 +136,9 @@ class Gallery extends CI_Controller
             $this->db->where('id_gallery', $id);
             $this->db->update('gallery', ['is_deleted' => 1]);
 
-            $this->session->set_flashdata('success', 'Gallery berhasil dihapus.');
+            $this->session->set_flashdata('success', 'Data Gallery berhasil dihapus.');
         } else {
-            $this->session->set_flashdata('error', 'Gallery tidak ditemukan.');
+            $this->session->set_flashdata('error', 'Data Gallery tidak ditemukan.');
         }
 
         redirect('gallery');

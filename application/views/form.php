@@ -55,9 +55,18 @@
     </style>
 </head>
 <body>
+        <?php if ($this->session->flashdata('success')): ?>
+            <div class="alert alert-primary"><?= $this->session->flashdata('success'); ?></div>
+        <?php endif; ?>
+        <?php if ($this->session->flashdata('error')): ?>
+            <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
+        <?php endif; ?>
+        
+
     <div class="form-container">
         <h2>Formulir Pendaftaran</h2>
-        <form action="proses_pendaftaran.php" method="POST">
+        <form action="<?= base_url('Form/save') ?>" method="post" enctype="multipart/form-data" id="form-daftar">
+        <!-- <form action="proses_pendaftaran" method="POST"> -->
             <label>Nama Lengkap</label>
             <input type="text" name="fullname" required>
 
@@ -80,7 +89,8 @@
             <input type="text" name="parent_job" required>
 
             <label>No. Hp</label>
-            <input type="text" name="parent_phone" required>
+            <input type="number" name="parent_phone" required
+            pattern="[0-9]+" maxlength="12" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
             
             <input type="submit" value="KIRIM">
         </form>

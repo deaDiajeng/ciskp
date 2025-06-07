@@ -15,7 +15,7 @@ class Agenda extends CI_Controller
         $data['agenda'] = $this->Agenda_model->get_all();
 
         $this->load->view('layout/header');
-        $this->load->view('layout/adminav');
+        // $this->load->view('layout/adminav');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/agenda', $data);
         $this->load->view('script/agenda_script');
@@ -65,7 +65,7 @@ class Agenda extends CI_Controller
         ];
 
         $this->Agenda_model->insert($data);
-        $this->session->set_flashdata('success', 'Agenda berhasil ditambahkan');
+        $this->session->set_flashdata('success', 'Agenda Kegiatan berhasil ditambahkan');
         redirect('agenda');
     }
 
@@ -121,7 +121,7 @@ class Agenda extends CI_Controller
         $this->db->where('id_agenda', $id);
         $this->db->update('agenda', $data);
 
-        $this->session->set_flashdata('success', 'Agenda berhasil diperbarui.');
+        $this->session->set_flashdata('success', 'Agenda Kegiatan berhasil diperbarui.');
         redirect('agenda');
     }
 
@@ -142,9 +142,9 @@ class Agenda extends CI_Controller
             $this->db->where('id_agenda', $id);
             $this->db->update('agenda', ['is_deleted' => 1]);
 
-            $this->session->set_flashdata('success', 'Agenda berhasil dihapus.');
+            $this->session->set_flashdata('success', 'Agenda Kegiatan berhasil dihapus.');
         } else {
-            $this->session->set_flashdata('error', 'Agenda tidak ditemukan.');
+            $this->session->set_flashdata('error', 'Agenda Kegiatan tidak ditemukan.');
         }
 
         redirect('agenda');

@@ -15,7 +15,7 @@ class Capaian extends CI_Controller
         $data['achievement'] = $this->Capaian_model->get_all();
         
         $this->load->view('layout/header');
-        $this->load->view('layout/adminav');
+        // $this->load->view('layout/adminav');
         $this->load->view('layout/sidebar');
         $this->load->view('admin/capaian', $data); 
         $this->load->view('script/capaian_script');
@@ -62,7 +62,7 @@ class Capaian extends CI_Controller
         ];
 
         $this->Capaian_model->insert($data);
-        $this->session->set_flashdata('success', 'Capaian berhasil ditambahkan');
+        $this->session->set_flashdata('success', 'Data Capaian berhasil ditambahkan');
         redirect('capaian');
     }
 
@@ -116,7 +116,7 @@ class Capaian extends CI_Controller
         $this->db->where('id_achievement', $id);
         $this->db->update('achievement', $data);
 
-        $this->session->set_flashdata('success', 'Capaian berhasil diperbarui.');
+        $this->session->set_flashdata('success', 'Data Capaian berhasil diperbarui.');
         redirect('capaian');
     }
 
@@ -137,9 +137,9 @@ class Capaian extends CI_Controller
             $this->db->where('id_achievement', $id);
             $this->db->update('achievement', ['is_deleted' => 1]);
 
-            $this->session->set_flashdata('success', 'Capaian berhasil dihapus.');
+            $this->session->set_flashdata('success', 'Data Capaian berhasil dihapus.');
         } else {
-            $this->session->set_flashdata('error', 'Capaian tidak ditemukan.');
+            $this->session->set_flashdata('error', 'Data Capaian tidak ditemukan.');
         }
 
         redirect('capaian');

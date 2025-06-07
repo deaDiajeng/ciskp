@@ -5,8 +5,8 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Page Heading -->
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+                <div class="d-flex justify-content-between align-items-center mb-4 mt-4">
+                    <h1 class="h2 mb-4 text-gray-800">Dashboard</h1>
                 </div>
                 
                     <!-- Content Row -->
@@ -19,7 +19,7 @@
                                     <p>To the Dashboard</p>
                                 </div>
                                 <div class="card-body font-weight-bold text-center">
-                                    <p>Admin dea</p>
+                                    <p>Admin Sensei</p>
                                 </div>
                             </div>
                         </div>
