@@ -58,8 +58,7 @@ class Agenda extends CI_Controller
 
         $data = [
             'title' => $title,
-            'descript' => $descript,
-            // 'date' => $date,
+            'date' => $date,
             'image' => $image,
             'is_deleted' => 0,
             'keterangan' => $description
@@ -75,8 +74,7 @@ class Agenda extends CI_Controller
     {
         $id = $this->input->post('id_agenda');
         $title = $this->input->post('title');
-        $descript = $this->input->post('descript');
-        // $date = $this->input->post('date');
+        $date = $this->input->post('date');
         $oldImage = $this->input->post('old_image');
         $description = $this->input->post('keterangan');
 

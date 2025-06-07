@@ -106,8 +106,8 @@
     <textarea class="form-control" name="keterangan" id="keterangan" rows="4"></textarea>
 </div>
                         <div class="form-group">
-                            <label for="title">Deskripsi Singkat</label>
-                            <input type="title" class="form-control" name="descript" id="descript" required>
+                            <label for="date">Tanggal</label>
+                            <input type="date" class="form-control" name="date" id="date" required>
                         </div>
                         <input type="hidden" name="old_image" id="old_image">
 
