@@ -27,4 +27,33 @@
             $('#preview-old-image').attr('src', '').hide();
         });
     });
+
+    $(document).ready(function() {
+        // Reset modal saat dibuka
+        $('#capaianModal').on('show.bs.modal', function(e) {
+            const button = $(e.relatedTarget);
+            const id = button.data('id');
+
+            const form = $('#form-capaian');
+            if (id) {
+                // MODE EDIT
+                $('#capaianModalLabel').text('Edit Capaian');
+                form.attr('action', '<?= base_url('Capaian/update') ?>');
+
+                $('#id_achievement').val(id);
+                $('#name').val(button.data('name'));
+                $('#achievement').val(button.data('achievement'));
+                $('#old_image').val(button.data('image'));
+
+                // Tampilkan preview gambar lama
+                $('#preview-old-image').attr('src', '<?= base_url('uploads/capaian/') ?>' + button.data('image')).show();
+            } else {
+                // MODE TAMBAH
+                $('#capaianModalLabel').text('Tambah Capaian');
+                form.attr('action', '<?= base_url('Capaian/save') ?>');
+                form.trigger('reset');
+                $('#preview-old-image').hide();
+            }
+        });
+    });
 </script>

@@ -3,6 +3,7 @@
         $('.btn-edit').on('click', function() {
             const id = $(this).data('id');
             const title = $(this).data('title');
+            const keterangan = $(this).data('keterangan');
             const date = $(this).data('date');
             const image = $(this).data('image');
 
@@ -10,6 +11,7 @@
             $('#form-agenda').attr('action', '<?= base_url('Agenda/update') ?>');
             $('#id_agenda').val(id);
             $('#title').val(title);
+            $('#keterangan').val(keterangan);
             $('#date').val(date);
             $('#old_image').val(image);
 
