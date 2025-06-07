@@ -66,7 +66,7 @@
                                         <?php endforeach; ?>
                                     <?php else : ?>
                                         <tr>
-                                            <td colspan="5" class="text-center text-muted">Belum ada Data Capaian Hafalan.</td>
+                                            <td colspan="5" class="text-center text-muted">Tidak ada data capaian.</td>
                                         </tr>
                                     <?php endif; ?>                    
                                 </tbody>

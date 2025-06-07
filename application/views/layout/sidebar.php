@@ -14,7 +14,7 @@
 
         <li class="nav-item">
             <a class="nav-link" href="CMSMenu">
-                <i class="fas fa-sliders-h"></i>
+                <i class="fas fa-images"></i>
                 <span>CMS</span>
             </a>
         </li>
@@ -38,15 +38,9 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="Daftar">
-                <i class="fas fa-id-card"></i>
+                <i class="fas fa-images"></i>
                 <span>Pendafaran</span>
             </a>
         </li>
-        <div class="mt-auto text-center p-4">
-            <a class="btn btn-outline-light" href="logout">
-                Logout
-            </a>
-        </div>
     </ul>
-    
     <!-- End of Sidebar -->

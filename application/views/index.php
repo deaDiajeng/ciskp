@@ -23,12 +23,16 @@ include 'layout/navbar.php';
 
 <div class="container py-5">
         <div class="row py-3">
-            <div class="col-lg-7 mt-5 mb-4">
+            <div class="col-lg-5 mb-4">
+                <img src="<?= base_url('uploads/logoRQ.png')?>" class="d-block w-50 rounded" alt="...">
+            </div>
+            <div class="col-lg-7 mt-0 mb-4">
                 <h1>RUMAH QUR'AN INSAN TODA</h1>
                 <h4>Menjadi Sekolah yang menyenangkan bagi siswa</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
                 <p>
-                    <a href="daftar.php" class="btn btn-dark">DAFTAR</a>
+                    <a href="<?= site_url('form') ?>" class="btn btn-dark">Daftar Sekarang</a>
+                    <!-- <a href="daftar.php" class="btn btn-dark">DAFTAR</a> -->
                     <!-- <button type="button" class="btn btn-outline-dark">Profil Sekolah</button> -->
                 </p>
             </div>
@@ -179,35 +183,36 @@ include 'layout/navbar.php';
     <div class="py-5 bg-light">
         <div class="container">
             <div class="row">
-            <!-- Peta Google Maps -->
-            <div class="col-md-6 mb-4">
-                <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2894251935327!2d106.78210200000001!3d-6.610915200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5c250150173%3A0x3f6474c67e648216!2sSMKIT%20Insan%20Toda!5e0!3m2!1sen!2sid!4v1748321097561!5m2!1sen!2sid"
-                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                class="rounded shadow-sm">
-                </iframe>
-            </div>
-            <div class="col-lg-6 mb-4">
-                <img src="https://naevaschool.naevaweb.my.id/userfiles/uploads/bg-edukasi-246.jpg" class="d-block w-100 rounded" alt="...">
-            
-            <class=col-md-6 d-flex flex-column justify-content-center>
-                <h2 class="fw-bold mt-3 text-center">RUMAH QUR'AN INSAN TODA</h2>
-                <p class="text-muted mb-">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-            <div class="d-flex gap-3">
-                <!-- <a href="https://maps.app.goo.gl/ZDRvYRD6XXpXP6AZ8" target="_blank" class="btn btn-dark">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a> -->
-                <a href="https://wa.me/6283819937178" target="_blank" class="btn btn-dark">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://instagram.com/diajenglarasati_272" target="_blank" class="btn btn-dark">
-                    <i class="fab fa-instagram"></i>
-                </a>
+                <!-- Peta Google Maps -->
+                <div class="col-md-6 mb-4">
+                    <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2894251935327!2d106.78210200000001!3d-6.610915200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5c250150173%3A0x3f6474c67e648216!2sSMKIT%20Insan%20Toda!5e0!3m2!1sen!2sid!4v1748321097561!5m2!1sen!2sid"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="rounded shadow-sm">
+                    </iframe>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="col-lg-15 mb-4">
+                    <img src="<?= base_url('uploads/sampul 1.jpg')?>" class="d-block w-100 rounded" alt="...">
+                    <h2 class="fw-bold mt-3 text-center">RUMAH QUR'AN INSAN TODA</h2>
+                    <p class="text-muted mb-">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <!-- <a href="https://maps.app.goo.gl/ZDRvYRD6XXpXP6AZ8" target="_blank" class="btn btn-dark">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a> -->
+                        <a href="https://wa.me/6283819937178" target="_blank" class="btn btn-dark">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/diajenglarasati_272" target="_blank" class="btn btn-dark">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <?php include 'layout/footer.php'; ?>

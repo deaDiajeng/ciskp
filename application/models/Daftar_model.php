@@ -22,10 +22,10 @@ class Daftar_model extends CI_Model
 
     // public function update($id, $data) 
     // {
-    //     $this->db->where('id_registration', $id)->update('registration', $data);
+    //     $this->db->where('id_achievement', $id)->update('achievement', $data);
     // }
 
     // public function soft_delete($id) {
-    //     $this->db->where('id_registration', $id)->update('registration', ['is_deleted' => 1]);
+    //     $this->db->where('id_achievement', $id)->update('achievement', ['is_deleted' => 1]);
     // }
 }

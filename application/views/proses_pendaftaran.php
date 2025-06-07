@@ -16,11 +16,6 @@ $grade        = $_POST['grade'];
 $parent       = $_POST['parent'];
 $parent_job   = $_POST['parent_job'];
 $parent_phone = $_POST['parent_phone'];
-if (!preg_match('/^[0-9]+$/', $parent_phone)) {
-    echo "Nomor HP hanya boleh berisi angka!";
-    exit;
-}
-
 
 // Simpan ke tabel registration
 $sql = "INSERT INTO registration 
@@ -35,5 +30,4 @@ if ($koneksi->query($sql) === TRUE) {
 }
 
 $koneksi->close();
-
 ?>
